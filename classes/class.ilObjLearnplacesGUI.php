@@ -195,6 +195,10 @@ final class ilObjLearnplacesGUI extends ilObjectPluginGUI {
      *
      */
     protected function setSubtabs() {
+		// fau: xsrlLegal - add legal text on create new tab
+		ilUtil::sendInfo($this->plugin->txt('legal_app_download'));
+		// fau.
+		
         if ($this->accessGuard->hasWritePermission()) {
             $this->learnplaceTabs->addSubTab(self::SUBTAB_CONTENT, $this->lng->txt(self::SUBTAB_CONTENT), $this->ctrl->getLinkTarget($this));
 
